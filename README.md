@@ -21,5 +21,5 @@ Fetches book data from [FreeAPI.app](https://freeapi.app/) and displays it with 
 ## 🔗 Live Link
 [**Books Library - Live**](https://bookss-libraryy.netlify.app/)
 
-## 🔗 API Used
+## 🔗 API Used 
 [FreeAPI.app](https://freeapi.hashnode.space/api-guide/apireference/getBooks)
