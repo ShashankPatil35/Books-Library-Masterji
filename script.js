@@ -119,4 +119,39 @@ prevPageBtn.addEventListener("click", () => {
     }
 });
 
+const sortOptions = document.getElementById("sortOptions");
+
+sortOptions.addEventListener("change", () => {
+    const sortBy = sortOptions.value;
+
+    if (sortBy === "title-asc") {
+        books.sort((a, b) => {
+            let titleA = a.volumeInfo?.title?.toLowerCase() || "";
+            let titleB = b.volumeInfo?.title?.toLowerCase() || "";
+            return titleA.localeCompare(titleB); // A-Z
+        });
+    } else if (sortBy === "title-desc") {
+        books.sort((a, b) => {
+            let titleA = a.volumeInfo?.title?.toLowerCase() || "";
+            let titleB = b.volumeInfo?.title?.toLowerCase() || "";
+            return titleB.localeCompare(titleA); // Z-A
+        });
+    } else if (sortBy === "publishedDate-asc") {
+        books.sort((a, b) => {
+            let dateA = new Date(a.volumeInfo?.publishedDate || "1900-01-01");
+            let dateB = new Date(b.volumeInfo?.publishedDate || "1900-01-01");
+            return dateA - dateB; // Oldest to Newest
+        });
+    } else if (sortBy === "publishedDate-desc") {
+        books.sort((a, b) => {
+            let dateA = new Date(a.volumeInfo?.publishedDate || "1900-01-01");
+            let dateB = new Date(b.volumeInfo?.publishedDate || "1900-01-01");
+            return dateB - dateA; // Newest to Oldest
+        });
+    }
+
+    displayBooks();
+});
+
+
 fetchBooks();
