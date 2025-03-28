@@ -3,9 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Digital Book Library</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="library-wrapper">
+        <header class="library-header">
+            <div class="header-container">
+                <div class="branding">
+                    <h1><i class="fas fa-book-open"></i> Books Library</h1>
+                </div>
+
+                <div class="library-controls">
+                    <!-- Search Box with Functional Icon -->
+                    <div class="search-container">
+                        <input type="text" id="searchBar" placeholder="Search Books by Title or Author">
+                        <button id="searchButton" class="search-icon">GO</button>
+                    </div>
+
+                    <div class="view-controls">
+                        <button id="toggleView" class="view-toggle">
+                            <i class="fas fa-th-large"></i>
+                            <span>Toggle/Grid View</span>
+                        </button>
+
+                        <select id="sortOptions" class="sort-select">
+                            <option value="">Sort Options</option>
+                            <option value="title-asc">Sort by Title (A-Z)</option>
+                            <option value="title-desc">Sort by Title (Z-A)</option>
+                            <option value="publishedDate-asc">Sort by Published Date (Oldest First)</option>
+                            <option value="publishedDate-desc">Sort by Published Date (Newest First)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="library-main">
+            <div id="booksContainer" class="grid-view"></div>
+        </main>
+
+        <div id="pagination" class="library-pagination">
+            <button id="prevPage" class="pagination-btn">
+                <i class="fas fa-chevron-left"></i> Previous
+            </button>
+            <span id="pageNumber" class="page-number">1</span>
+            <button id="nextPage" class="pagination-btn">
+                Next <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

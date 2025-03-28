@@ -1,0 +1,211 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --background-color: #f0f4f8;
+    --text-color: #333;
+    --card-background: #ffffff;
+    --hover-color: #2980b9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f6f8f9 0%, #e5ebee 100%);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+
+/* Header Styling */
+.library-header {
+    background-color: rgba(44, 62, 80, 0.9);
+    color: white;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Branding (Move text to left) */
+.branding {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Search Box & Icon Styling */
+.search-container {
+    position: relative;
+    display: inline-block;
+    align-items:center;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.search-container input[type="text"] {
+    width: 200px;
+    padding: 10px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 20px;
+    font-size: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .search-container button[type="submit"] {
+    background-color: #4e99e9;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: .9s ease;
+  }
+  .search-container button[type="submit"]:hover {
+    transform: scale(1.1);
+    color: rgb(255, 255, 255);
+    background-color: blue;
+  }
+
+/* Toggle Button Styling */
+.view-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#toggleView {
+    padding: 10px 15px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 25px;
+    border: none;
+    background-color: var(--secondary-color);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#toggleView:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.1);
+}
+.sort-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#sortOptions {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid var(--secondary-color);
+    border-radius: 20px;
+    background: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#sortOptions:hover {
+    border-color: var(--hover-color);
+}
+/* Books Container */
+#booksContainer {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.grid-view {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.list-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Book Cards */
+.book {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 100%;
+    max-width: 300px;
+    transition: all 0.3s ease;
+}
+
+.book:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Pagination */
+.library-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    background-color: var(--secondary-color);
+    color: white;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-container {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .view-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #toggleView {
+        width: 100%;
+        max-width: 200px;
+    }
+}
